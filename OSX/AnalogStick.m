@@ -7,6 +7,12 @@
 //
 
 #import "AnalogStick.h"
+#import "VirtualSteeringWheel.h"
+
+@interface AnalogStick () {
+    VirtualSteeringWheel *steeringwheel;
+}
+@end
 
 
 @implementation AnalogStick
@@ -22,17 +28,17 @@
         _yawRange = 90;
         _q = malloc(sizeof(float)*4);
         _m = malloc(sizeof(float)*9);
+        steeringwheel = [[VirtualSteeringWheel alloc] init];
     }
     return self;
 }
 
 -(void) createVirtualJoystick{
-
-    
+    [steeringwheel connectDevice];
 }
 
 -(void) destroyVirtualJoystick{
-
+    [steeringwheel disconnectDevice];
 }
 
 -(void) updateOrientation:(NSData *)data{
@@ -62,6 +68,8 @@
     axis[_pitchAxis] = pitch;
     axis[_rollAxis] = roll;
     axis[_yawAxis] = yaw;
+    
+    [steeringwheel sendLeftX: 0.0 leftY: -1.0 rightX: -roll rightY: 0.0];
     
 }
 
