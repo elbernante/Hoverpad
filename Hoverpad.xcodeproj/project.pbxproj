@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93198AC71E28309800C6F310 /* VirtualSteeringWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93198AC61E28309800C6F310 /* VirtualSteeringWheel.m */; settings = {ASSET_TAGS = (); }; };
 		D5292A0019FDB3E300F44EFA /* InstructionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D52929FF19FDB3E300F44EFA /* InstructionsCell.m */; };
 		D531A5D719EEC96C00F38A40 /* BLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D531A5D619EEC96C00F38A40 /* BLEManager.m */; };
 		D531A5E119EF2A5D00F38A40 /* AnalogStick.m in Sources */ = {isa = PBXBuildFile; fileRef = D531A5E019EF2A5D00F38A40 /* AnalogStick.m */; };
@@ -44,6 +45,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		93198AC51E28309800C6F310 /* VirtualSteeringWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VirtualSteeringWheel.h; path = OSX/VirtualSteeringWheel.h; sourceTree = SOURCE_ROOT; };
+		93198AC61E28309800C6F310 /* VirtualSteeringWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VirtualSteeringWheel.m; path = OSX/VirtualSteeringWheel.m; sourceTree = SOURCE_ROOT; };
 		D52929FE19FDB3E300F44EFA /* InstructionsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstructionsCell.h; path = iOS/InstructionsCell.h; sourceTree = SOURCE_ROOT; };
 		D52929FF19FDB3E300F44EFA /* InstructionsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InstructionsCell.m; path = iOS/InstructionsCell.m; sourceTree = SOURCE_ROOT; };
 		D531A5D519EEC96C00F38A40 /* BLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLEManager.h; path = OSX/BLEManager.h; sourceTree = SOURCE_ROOT; };
@@ -179,6 +182,8 @@
 				D5959DA819DBBCE500E5C7A3 /* AppDelegate.m */,
 				D531A5DF19EF2A5D00F38A40 /* AnalogStick.h */,
 				D531A5E019EF2A5D00F38A40 /* AnalogStick.m */,
+				93198AC51E28309800C6F310 /* VirtualSteeringWheel.h */,
+				93198AC61E28309800C6F310 /* VirtualSteeringWheel.m */,
 				D531A5D519EEC96C00F38A40 /* BLEManager.h */,
 				D531A5D619EEC96C00F38A40 /* BLEManager.m */,
 				D531A5DB19EEC97200F38A40 /* Views */,
@@ -392,6 +397,7 @@
 				D5959DAF19DBBCE500E5C7A3 /* OrientationView.m in Sources */,
 				D5959DAE19DBBCE500E5C7A3 /* StatusView.m in Sources */,
 				D5722EF519E393FD009C11AB /* SmallModelView.m in Sources */,
+				93198AC71E28309800C6F310 /* VirtualSteeringWheel.m in Sources */,
 				D531A5E119EF2A5D00F38A40 /* AnalogStick.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
