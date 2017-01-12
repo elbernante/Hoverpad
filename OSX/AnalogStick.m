@@ -8,15 +8,6 @@
 
 #import "AnalogStick.h"
 
-#import "VHIDDevice.h"
-#import <WirtualJoy/WJoyDevice.h>
-
-@interface AnalogStick () <VHIDDeviceDelegate>{
-    VHIDDevice *joystickDescription;
-    WJoyDevice *virtualJoystick;
-}
-
-@end
 
 @implementation AnalogStick
 
@@ -36,26 +27,14 @@
 }
 
 -(void) createVirtualJoystick{
-    joystickDescription = [[VHIDDevice alloc] initWithType:VHIDDeviceTypeJoystick pointerCount:4 buttonCount:1 isRelative:NO];
-    [joystickDescription setDelegate:self];
-//    NSLog(@"%@",[joystickDescription descriptor]);
-//    virtualJoystick = [[WJoyDevice alloc] initWithHIDDescriptor:[joystickDescription descriptor] productString:@"BLE Joystick"];
-    virtualJoystick = [[WJoyDevice alloc] initWithHIDDescriptor:[joystickDescription descriptor] properties:
-                       @{WJoyDeviceProductStringKey : @"iOSVirtualJoystick",
-                         WJoyDeviceSerialNumberStringKey : @"556378",
-                         WJoyDeviceVendorIDKey : [NSNumber numberWithUnsignedInt:1133],
-                         WJoyDeviceProductIDKey : [NSNumber numberWithUnsignedInt:512]}];
+
     
 }
+
 -(void) destroyVirtualJoystick{
-    joystickDescription.delegate = nil;
-    joystickDescription = nil;
-    virtualJoystick = nil;
+
 }
--(void) VHIDDevice:(VHIDDevice *)device stateChanged:(NSData *)state{
-    if(virtualJoystick)
-        [virtualJoystick updateHIDState:state];
-}
+
 -(void) updateOrientation:(NSData *)data{
     
     static const float halfpi = M_PI*.5;
@@ -84,9 +63,6 @@
     axis[_rollAxis] = roll;
     axis[_yawAxis] = yaw;
     
-    [joystickDescription setPointer:0 position:CGPointMake(axis[0], axis[1])];
-    [joystickDescription setPointer:1 position:CGPointMake(axis[2], 0)];
-//    [joystickDescription setPointer:2 position:CGPointMake(0, 0)];
 }
 
 -(void) cropPitch:(float*)pitch Roll:(float*)roll Yaw:(float*)yaw{
