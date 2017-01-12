@@ -176,18 +176,6 @@ struct gamepad_report_t {
     return true;
 }
 
--(void) sendMessage:(NSData*)encodedData {
-    
-    kern_return_t ret = IOConnectCallScalarMethod(self->connect,
-                                                  FOOHID_SEND,
-                                                  self->send_message,
-                                                  SEND_COUNT,
-                                                  NULL, 0);
-    if (ret != KERN_SUCCESS) {
-        NSLog(@"Unable to send message to HID device");
-    }
-}
-
 -(void) sendLeftX: (float) leftX leftY: (float) leftY rightX: (float) rightX rightY: (float) rightY {
     if (!self->isConnected) {
         NSLog(@"Device is not connected.");

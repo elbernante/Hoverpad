@@ -13,7 +13,6 @@
 -(BOOL) connectDevice;
 -(BOOL) disconnectDevice;
 
--(void) sendMessage:(NSData*)encodedData;
 -(void) sendLeftX: (float) leftX leftY: (float) leftY rightX: (float) rightX rightY: (float) rightY;
 
 @end
